@@ -1,6 +1,8 @@
 name: CI
 
-on: [push]
+on:
+  - push
+  - pull_request
 
 jobs:
   build:
@@ -8,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Git clone my repo
     - uses: actions/checkout@v1
     - name: npm install
       run: |
-        make install         
-    - name: linter
+        make install  
+    - name: Run linter
       run: make lint
