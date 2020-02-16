@@ -1,4 +1,4 @@
-name: CI
+name: Node CI
 
 on:
   - push
@@ -12,8 +12,14 @@ jobs:
     steps:
     - name: Git clone my repo
     - uses: actions/checkout@v1
+
     - name: npm install
       run: |
+<<<<<<< HEAD
         make install  
+=======
+        make install   
+
+>>>>>>> bd1de393901216fc452c031630cafc94ec20ad8e
     - name: Run linter
       run: make lint
