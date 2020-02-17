@@ -9,15 +9,16 @@ const greeting = () => {
 };
 
 const startGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  let score = 0;
+  console.log('Welcome to the Brain Games!'); //  greeting()
+  const userName = readlineSync.question('May I have your name? '); //  greeting()
+  console.log(`Hello ${userName}!`); //  greeting()
+  console.log('Answer "yes" if the number is even, otherwise answer "no".'); //   rules
+  let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) {
     const randomNumber = Math.ceil(Math.random() * 100);
     console.log(`Question: ${randomNumber}`);
+
     if (randomNumber % 2 === 0) {
       const answerForEvenNumber = readlineSync.question('Your answer: ');
       if (answerForEvenNumber !== 'yes') {

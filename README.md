@@ -11,3 +11,7 @@ $ make install
 ## Run lint
 
 $ make lint
+
+## Install Game
+npm link (from directory)
+[![asciicast](https://asciinema.org/a/qwq3vJOdScBSfxNAdaaFEKnzr.svg)](https://asciinema.org/a/qwq3vJOdScBSfxNAdaaFEKnzr)
