@@ -8,4 +8,4 @@ const greeting = () => {
   return console.log(`Hello ${userName}!`);
 };
 
-export default greeting;
+export  {greeting};
