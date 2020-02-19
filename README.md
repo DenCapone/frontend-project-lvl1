@@ -14,4 +14,11 @@ $ make lint
 
 ## Install Game
 npm link (from directory)
+
+Brain Even
+
 [![asciicast](https://asciinema.org/a/qwq3vJOdScBSfxNAdaaFEKnzr.svg)](https://asciinema.org/a/qwq3vJOdScBSfxNAdaaFEKnzr)
+
+Brain Calculate
+
+[![asciicast](https://asciinema.org/a/6hSpICWiw3aJQd71mTTKThJnC.svg)](https://asciinema.org/a/6hSpICWiw3aJQd71mTTKThJnC)

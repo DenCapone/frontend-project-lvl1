@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-eval */
 import readlineSync from 'readline-sync';
 
 const greeting = () => {
@@ -41,4 +43,30 @@ const startGame = () => {
   return score === 3 ? console.log(`Congratulations, ${userName}!`) : console.log(`Let's try again, ${userName}!`);
 };
 
-export { greeting, startGame };
+const startCalculateGame = () => {
+  console.log('Welcome to the Brain Games!'); //  greeting()
+  const userName = readlineSync.question('May I have your name? '); //  greeting()
+  console.log(`Hello ${userName}!`); //  greeting()
+  console.log('What is the result of the expression?'); //  Task
+  let score = 0; //   For win you must get 3 score in a row !
+
+  for (score; score < 3; score += 1) {
+    const getRandomNumber = () => Math.ceil(Math.random() * 100);
+    const operatorsUsedInTheGame = ['+', '-', '*'];
+    const getRandomOperator = operatorsUsedInTheGame[Math.floor(Math.random() * operatorsUsedInTheGame.length)];
+    const expression = `${getRandomNumber()} ${getRandomOperator} ${getRandomNumber()}`;
+    const result = eval(expression);
+    console.log(`Question: ${expression}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer != result) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".`);
+      break;
+    } else {
+      console.log('Correct!');
+    }
+  }
+  return score === 3 ? console.log(`Congratulations, ${userName}!`) : console.log(`Let's try again, ${userName}!`);
+};
+
+export { greeting, startGame, startCalculateGame };
