@@ -26,3 +26,7 @@ Brain Calculate
 Brain GCD
 
 [![asciicast](https://asciinema.org/a/bsqOkT53rXpdFefwdnvQwjFje.svg)](https://asciinema.org/a/bsqOkT53rXpdFefwdnvQwjFje)
+
+Brain Progression
+
+[![asciicast](https://asciinema.org/a/vYVg9QCAUQvoxY59LQVUm7OoC.svg)](https://asciinema.org/a/vYVg9QCAUQvoxY59LQVUm7OoC)
