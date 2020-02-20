@@ -22,3 +22,7 @@ Brain Even
 Brain Calculate
 
 [![asciicast](https://asciinema.org/a/6hSpICWiw3aJQd71mTTKThJnC.svg)](https://asciinema.org/a/6hSpICWiw3aJQd71mTTKThJnC)
+
+Brain GCD
+
+[![asciicast](https://asciinema.org/a/bsqOkT53rXpdFefwdnvQwjFje.svg)](https://asciinema.org/a/bsqOkT53rXpdFefwdnvQwjFje)
