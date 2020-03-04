@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from './gameFlow.js';
 
 const getGcd = (firstNum, secondNum) => {
   let result;
@@ -19,8 +20,8 @@ const startGcdGame = () => {
   let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) {
-    const firstNumber = Math.ceil(Math.random() * 100);
-    const secondNumber = Math.ceil(Math.random() * 100);
+    const firstNumber = getNumber();
+    const secondNumber = getNumber();
     const answer = getGcd(firstNumber, secondNumber);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
     const userAnswer = Number(readlineSync.question('Your answer: '));

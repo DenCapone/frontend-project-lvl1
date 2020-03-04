@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from './gameFlow.js';
 
 const startCalculateGame = () => {
   console.log('Welcome to the Brain Games!'); //  greeting()
@@ -8,21 +9,26 @@ const startCalculateGame = () => {
   let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) {
-    const getFirstNumber = Math.ceil(Math.random() * 100);
-    const getSecondNumber = Math.ceil(Math.random() * 100);
+    const getFirstNumber = getNumber();
+    const getSecondNumber = getNumber();
     const operators = ['+', '-', '*'];
     const getOperator = operators[Math.floor(Math.random() * operators.length)];
     const expression = `${getFirstNumber} ${getOperator} ${getSecondNumber}`;
 
     let result;
-    if (getOperator === '+') {
-      result = getFirstNumber + getSecondNumber;
-    }
-    if (getOperator === '-') {
-      result = getFirstNumber - getSecondNumber;
-    }
-    if (getOperator === '*') {
-      result = getFirstNumber * getSecondNumber;
+
+    switch (getOperator) {
+      case '+':
+        result = getFirstNumber + getSecondNumber;
+        break;
+      case '-':
+        result = getFirstNumber - getSecondNumber;
+        break;
+      case '*':
+        result = getFirstNumber * getSecondNumber;
+        break;
+      default:
+        break;
     }
 
     console.log(`Question: ${expression}`);

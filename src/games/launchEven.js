@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from './gameFlow.js';
 
 const startEvenGame = () => {
   console.log('Welcome to the Brain Games!'); //  greeting()
@@ -8,7 +9,7 @@ const startEvenGame = () => {
   let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) {
-    const firstNumber = Math.ceil(Math.random() * 100);
+    const firstNumber = getNumber();
     console.log(`Question: ${firstNumber}`);
 
     if (firstNumber % 2 === 0) {

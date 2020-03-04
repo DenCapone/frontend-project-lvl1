@@ -7,6 +7,8 @@ const greeting = () => {
 
   return console.log(`Hello ${userName}!`);
 };
+
+const getNumber = () => Math.ceil(Math.random() * 100);
 /*
 const firstNumber = Math.ceil(Math.random() * 100); //  get random number
 const secondNumber = Math.ceil(Math.random() * 100); // get random number
@@ -54,7 +56,7 @@ const startGame = () => { //  game flow
   let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) { // game rounds
-    const firstNumber = Math.ceil(Math.random() * 100);
+    const firstNumber = getNumber();
     console.log(`Question: ${firstNumber}`);
 
     if (firstNumber % 2 === 0) {
@@ -79,4 +81,4 @@ const startGame = () => { //  game flow
   return score === 3 ? console.log(`Congratulations, ${userName}!`) : console.log(`Let's try again, ${userName}!`);
 };
 
-export { greeting, startGame };
+export { greeting, startGame, getNumber };

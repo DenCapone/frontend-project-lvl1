@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from './gameFlow.js';
 
 const isPrimeNumber = (number) => {
   if (number <= 2) {
@@ -20,9 +21,9 @@ const startPrimeGame = () => {
   let score = 0; //   For win you must get 3 score in a row !
 
   for (score; score < 3; score += 1) {
-    const getNumber = Math.ceil(Math.random() * 100);
-    console.log(`Question: ${getNumber}`);
-    const answer = isPrimeNumber(getNumber);
+    const number = getNumber();
+    console.log(`Question: ${number}`);
+    const answer = isPrimeNumber(number);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== answer) {

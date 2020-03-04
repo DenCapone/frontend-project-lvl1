@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from './gameFlow.js';
 
 const getProgression = () => {
-  const progressionStep = Math.floor(Math.random() * 100);
-  const begginingOfProgression = Math.floor(Math.random() * 100);
+  const progressionStep = getNumber();
+  const begginingOfProgression = getNumber();
   const progression = [];
   progression[0] = begginingOfProgression;
 
