@@ -1,5 +1,6 @@
-import readlineSync from 'readline-sync';
-import { getNumber } from './gameFlow.js';
+import { getNumber, startGame } from './gameFlow.js';
+
+const objective = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (number) => {
   if (number <= 2) {
@@ -13,27 +14,16 @@ const isPrimeNumber = (number) => {
   return 'yes';
 };
 
+const primeGame = () => {
+  const firstNumber = getNumber();
+  const task = `${firstNumber}`;
+  const answer = isPrimeNumber(firstNumber);
+
+  return [task, answer];
+};
+
 const startPrimeGame = () => {
-  console.log('Welcome to the Brain Games!'); //  greeting()
-  const userName = readlineSync.question('May I have your name? '); //  greeting()
-  console.log(`Hello ${userName}!`); //  greeting()
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".'); //   rules
-  let score = 0; //   For win you must get 3 score in a row !
-
-  for (score; score < 3; score += 1) {
-    const number = getNumber();
-    console.log(`Question: ${number}`);
-    const answer = isPrimeNumber(number);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer !== answer) {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
-      break;
-    } else {
-      console.log('Correct!');
-    }
-  }
-  return score === 3 ? console.log(`Congratulations, ${userName}!`) : console.log(`Let's try again, ${userName}!`);
+  startGame(objective, primeGame);
 };
 
 export default startPrimeGame;
