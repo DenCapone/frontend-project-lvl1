@@ -1,6 +1,7 @@
-import { getNumber, startGame } from './gameFlow.js';
+import playtGame from '../gameFlow.js';
+import getNumber from '../utils.js';
 
-const objective = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (firstNum, secondNum) => {
   let result;
@@ -13,16 +14,16 @@ const getGcd = (firstNum, secondNum) => {
   return result;
 };
 
-const gcdGame = () => {
-  const firstNumber = getNumber();
-  const secondNumber = getNumber();
+const genGcdGame = () => {
+  const firstNumber = getNumber(1, 100);
+  const secondNumber = getNumber(1, 100);
   const task = `${firstNumber} ${secondNumber}`;
   const answer = String(getGcd(firstNumber, secondNumber));
   return [task, answer];
 };
 
 const startGcdGame = () => {
-  startGame(objective, gcdGame);
+  playtGame(description, genGcdGame);
 };
 
 export default startGcdGame;

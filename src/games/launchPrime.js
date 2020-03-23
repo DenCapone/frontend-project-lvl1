@@ -1,29 +1,30 @@
-import { getNumber, startGame } from './gameFlow.js';
+import playtGame from '../gameFlow.js';
+import getNumber from '../utils.js';
 
-const objective = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (number) => {
   if (number <= 2) {
-    return 'yes';
+    return true;
   }
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
-const primeGame = () => {
-  const firstNumber = getNumber();
+const genPrimeGame = () => {
+  const firstNumber = getNumber(1, 100);
   const task = `${firstNumber}`;
-  const answer = isPrimeNumber(firstNumber);
+  const answer = isPrimeNumber(firstNumber) ? 'yes' : 'no';
 
   return [task, answer];
 };
 
 const startPrimeGame = () => {
-  startGame(objective, primeGame);
+  playtGame(description, genPrimeGame);
 };
 
 export default startPrimeGame;

@@ -1,34 +1,34 @@
+import playtGame from '../gameFlow.js';
+import getNumber from '../utils.js';
 
-import { getNumber, startGame } from './gameFlow.js';
+const description = 'What is the result of the expression?';
 
-const objective = 'What is the result of the expression?';
-
-const calculateGame = () => {
-  const firstNumber = getNumber();
-  const secondNumber = getNumber();
-  const operators = ['+', '-', '*'];
-  const getOperator = operators[Math.floor(Math.random() * operators.length)];
-  const task = `${firstNumber} ${getOperator} ${secondNumber}`;
+const genExpression = () => {
+  const firstNumber = getNumber(1, 100);
+  const secondNumber = getNumber(1, 100);
+  const operatorsForGame = ['+', '-', '*'];
+  const operatorForRound = operatorsForGame[Math.floor(Math.random() * operatorsForGame.length)];
+  const task = `${firstNumber} ${operatorForRound} ${secondNumber}`;
   let answer;
 
-  switch (getOperator) {
+  switch (operatorForRound) {
     case '+':
-      answer = String(firstNumber + secondNumber);
+      answer = firstNumber + secondNumber;
       break;
     case '-':
-      answer = String(firstNumber - secondNumber);
+      answer = firstNumber - secondNumber;
       break;
     case '*':
-      answer = String(firstNumber * secondNumber);
+      answer = firstNumber * secondNumber;
       break;
     default:
       break;
   }
-  return [task, answer];
+  return [task, String(answer)];
 };
 
 const startCalculateGame = () => {
-  startGame(objective, calculateGame);
+  playtGame(description, genExpression);
 };
 
 export default startCalculateGame;

@@ -1,20 +1,21 @@
-import { getNumber, startGame } from './gameFlow.js';
+import playtGame from '../gameFlow.js';
+import getNumber from '../utils.js';
 
-const objective = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getProgression = () => {
-  const progressionStep = getNumber();
-  const begginingOfProgression = getNumber();
+  const progressionStep = getNumber(1, 100);
+  const begginingOfProgression = getNumber(1, 100);
+  const progressionLength = 10;
   const progression = [];
-  progression[0] = begginingOfProgression;
 
-  for (let i = 1; i < 10; i += 1) {
-    progression[i] = progression[i - 1] + progressionStep;
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression[i] = begginingOfProgression + progressionStep * i;
   }
   return progression;
 };
 
-const progressionGame = () => {
+const genGame = () => {
   const progression = getProgression();
   const hiddenNumber = Math.floor(Math.random() * 10);
   const answer = String(progression[hiddenNumber]);
@@ -25,7 +26,7 @@ const progressionGame = () => {
 };
 
 const startProgressionGame = () => {
-  startGame(objective, progressionGame);
+  playtGame(description, genGame);
 };
 
 export default startProgressionGame;

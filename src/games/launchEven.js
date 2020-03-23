@@ -1,22 +1,18 @@
-import { getNumber, startGame } from './gameFlow.js';
+import playtGame from '../gameFlow.js';
+import getNumber from '../utils.js';
 
-const objective = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const evenGame = () => {
-  const firstNumber = getNumber();
-  const task = firstNumber;
-  let answer;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  if (firstNumber % 2 === 0) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return [task, answer];
+const genNum = () => {
+  const num = getNumber(1, 100);
+  const answer = num % 2 === 0 ? 'yes' : 'no';
+
+  return [num, answer];
 };
 
 const startEvenGame = () => {
-  startGame(objective, evenGame);
+  playtGame(description, genNum);
 };
 
 export default startEvenGame;
