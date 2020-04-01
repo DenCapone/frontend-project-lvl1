@@ -1,13 +1,13 @@
-import playtGame from '../gameFlow.js';
+import playGame from '../gameFlow.js';
 import getNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const genExpression = () => {
+const genGameData = () => {
   const firstNumber = getNumber(1, 100);
   const secondNumber = getNumber(1, 100);
-  const operatorsForGame = ['+', '-', '*'];
-  const operatorForRound = operatorsForGame[Math.floor(Math.random() * operatorsForGame.length)];
+  const operators = ['+', '-', '*'];
+  const operatorForRound = operators[getNumber(0, 2)];
   const task = `${firstNumber} ${operatorForRound} ${secondNumber}`;
   let answer;
 
@@ -28,7 +28,7 @@ const genExpression = () => {
 };
 
 const startCalculateGame = () => {
-  playtGame(description, genExpression);
+  playGame(description, genGameData);
 };
 
 export default startCalculateGame;
