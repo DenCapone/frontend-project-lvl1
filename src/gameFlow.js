@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
 
+const numOfRounds = 3;
+
 const playGame = (rule, genGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}!`);
   console.log(rule);
-  const numOfRounds = 3;
 
   for (let score = 0; score < numOfRounds; score += 1) { // For win you must get 3 score in a row !
     const gameData = genGameData();

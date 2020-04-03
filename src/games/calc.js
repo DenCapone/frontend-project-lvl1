@@ -7,11 +7,11 @@ const genGameData = () => {
   const firstNumber = getNumber(1, 100);
   const secondNumber = getNumber(1, 100);
   const operators = ['+', '-', '*'];
-  const operatorForRound = operators[getNumber(0, 2)];
-  const task = `${firstNumber} ${operatorForRound} ${secondNumber}`;
+  const operator = operators[getNumber(0, operators.length)];
+  const task = `${firstNumber} ${operator} ${secondNumber}`;
   let answer;
 
-  switch (operatorForRound) {
+  switch (operator) {
     case '+':
       answer = firstNumber + secondNumber;
       break;

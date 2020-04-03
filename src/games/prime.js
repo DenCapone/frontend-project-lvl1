@@ -16,11 +16,10 @@ const isPrime = (number) => {
 };
 
 const genGameData = () => {
-  const firstNumber = getNumber(1, 100);
-  const task = String(firstNumber);
-  const answer = isPrime(firstNumber) ? 'yes' : 'no';
+  const task = getNumber(1, 100);
+  const answer = isPrime(task) ? 'yes' : 'no';
 
-  return [task, answer];
+  return [String(task), answer];
 };
 
 const startPrimeGame = () => {
