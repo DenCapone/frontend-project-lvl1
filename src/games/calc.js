@@ -7,7 +7,7 @@ const genGameData = () => {
   const firstNumber = getNumber(1, 100);
   const secondNumber = getNumber(1, 100);
   const operators = ['+', '-', '*'];
-  const operator = operators[getNumber(0, operators.length)];
+  const operator = operators[getNumber(0, operators.length - 1)];
   const task = `${firstNumber} ${operator} ${secondNumber}`;
   let answer;
 
